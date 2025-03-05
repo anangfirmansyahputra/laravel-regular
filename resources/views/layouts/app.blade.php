@@ -40,7 +40,9 @@
 
       <!-- ===== Main Content Start ===== -->
       <main>
-        @yield('content')
+        <div class="p-4 mx-auto max-w-screen-2xl md:p-6">
+          @yield('content')
+        </div>
       </main>
       <!-- ===== Main Content End ===== -->
     </div>
