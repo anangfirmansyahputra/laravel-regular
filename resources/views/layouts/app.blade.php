@@ -9,6 +9,7 @@
   <title>
     eCommerce Dashboard | TailAdmin - Tailwind CSS Admin Dashboard Template
   </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -49,6 +50,32 @@
     <!-- ===== Content Area End ===== -->
   </div>
   <!-- ===== Page Wrapper End ===== -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+  @if (session('error'))
+  <script>
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: '{{ session('error') }}',
+    });
+  </script>
+  @endif
+
+  @if (session('success'))
+  <script>
+    Swal.fire({
+      icon: "success",
+      title: "Success",
+      text: '{{ session('success') }}'
+    })
+  </script>
+  @endif
+
+  @yield('scripts')
 </body>
 
 </html>
